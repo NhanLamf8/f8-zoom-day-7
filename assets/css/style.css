@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Source Sans 3", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "PT Sans", sans-serif;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+a {
+  font-size: inherit;
+  color: inherit;
+}
+
+/* --------header---------- */
+.header {
+  display: flex;
+  width: 100%;
+  height: 496px;
+  background: url(../img/banner-2.jpg) no-repeat;
+}
+
+.inner {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+}
+
+.container {
+  width: 1170px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.wrapper-header {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  justify-content: space-between;
+}
+.header-container {
+  display: flex;
+  flex-direction: column;
+}
+.nav-list {
+  display: flex;
+}
+.nav-list a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 1.5rem;
+  padding: 20px;
+  margin-left: 30px;
+  letter-spacing: 1.1;
+}
+
+.wrapper-action {
+  display: flex;
+  gap: 20px;
+}
+.wrapper-action button {
+  font-size: 2rem;
+  color: #fff;
+}
+.wrapper-breadcrumb {
+  height: 100%;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  gap: 16px;
+}
+
+h1.heading {
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+.breadcrumb {
+  display: flex;
+}
+.breadcrumb {
+  font-weight: 300;
+}
+.breadcrumb a {
+  text-decoration: none;
+}
+.breadcrumb li + li::before {
+  content: "/";
+  padding: 0 6px;
+}
