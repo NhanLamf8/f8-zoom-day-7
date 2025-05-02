@@ -381,11 +381,11 @@ h1.heading {
   padding-top: 112px;
   display: flex;
   padding-bottom: 98px;
+  gap: 30px;
 }
 
 .shop-left {
   width: 272px;
-  padding-right: 30px;
 }
 
 .search-form {
@@ -474,15 +474,18 @@ h1.heading {
   padding: 0 20px;
 }
 .product-list {
+  --colum: 3;
+  --space: 30px;
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
-  width: 100%;
+  row-gap: var(--space);
   margin-top: 65px;
+  margin-left: calc(-1 * var(--space));
 }
 .product-item {
-  width: calc(100% / 3 - 20px);
+  width: calc(100% / var(--colum) - var(--space));
   border: 1px solid #ccc;
+  margin-left: var(--space);
 }
 
 .product-item .img-thumb {
