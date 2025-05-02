@@ -80,9 +80,48 @@ a {
   display: inline-block;
   font-weight: 700;
   font-size: 1.5rem;
+  font-family: "PT Sans", sans-serif;
   padding: 20px;
-  margin-left: 30px;
   letter-spacing: 1.1;
+}
+.nav-list li {
+  position: relative;
+}
+.nav-list li:hover .nav-sublist {
+  opacity: 1;
+  transform: scaleY(1);
+  visibility: visible;
+}
+
+.nav-list .nav-sublist {
+  position: absolute;
+  background-color: #fff;
+  min-width: 220px;
+  visibility: hidden;
+  /* overflow: hidden; */
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition: opacity, transform, visibility, 0.5s ease;
+}
+.nav-sublist li:hover {
+  background-color: var(--primary-color);
+}
+.nav-sublist a:hover {
+  color: #fff;
+  transform: translateX(5px);
+}
+.nav-sublist .sublist-item {
+  color: #00000099;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 45px;
+  text-transform: capitalize;
+  padding: 0 20px;
+  transition: transform 0.4s ease;
+}
+.nav-sublist li + li {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .wrapper-action {
@@ -102,6 +141,10 @@ a {
   flex-direction: column;
   color: #fff;
   gap: 16px;
+}
+
+.breadcrumb a:hover {
+  color: var(--second-color);
 }
 
 h1.heading {
@@ -164,12 +207,18 @@ h1.heading {
   border: 1px solid #00000019;
 }
 
+.menu-sidebar li:hover a {
+  transform: translateX(10px);
+  color: #783df0;
+}
+
 .sidebar-item {
   display: block;
   text-decoration: none;
   padding: 0 24px;
   color: #585454;
   line-height: 40px;
+  transition: transform 0.3s ease-in-out;
 }
 .menu-sidebar li + li {
   border-top: 1px solid #00000019;
@@ -189,9 +238,10 @@ h1.heading {
   height: 30px;
   padding: 0 14px;
   line-height: 30px;
+  transition: background-color 0.3s ease;
+  border-radius: 15px;
 }
 .topics a:hover {
-  border-radius: 15px;
   background-color: var(--second-color);
   color: #fff;
 }
@@ -214,15 +264,33 @@ h1.heading {
   min-height: 400px;
   /* background-color: orange; */
   border: 1px solid #0000000d;
+  overflow: hidden;
 }
 .course-item .thumbnail {
   aspect-ratio: 1/0.8;
   display: block;
+  overflow: hidden;
 }
+
 .course-item .thumb {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.4s ease-in;
+}
+/* .course-item .thumb::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+} */
+
+.course-item:hover .thumb {
+  transform: scale(1.2);
+}
+.course-item:hover .info .title {
+  color: var(--primary-color);
 }
 .course-item .info {
   display: flex;
@@ -250,6 +318,9 @@ h1.heading {
   display: inline-block;
   object-fit: cover;
 }
+/* .bottom a {
+  position: relative;
+} */
 .btn {
   padding: 0 10px;
   text-decoration: none;
@@ -261,17 +332,54 @@ h1.heading {
   text-align: center;
   color: #fff;
 }
+
+.btn-free:hover,
+.btn-cost:hover {
+  transform: translateY(-5px);
+}
+.btn-free:hover::before,
+.btn-cost:hover:before {
+  opacity: 1;
+  visibility: visible;
+  top: 120%;
+}
+.btn-free::before,
+.btn-cost::before {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 10px;
+  visibility: hidden;
+  left: 8px;
+  opacity: 0;
+  top: 80%;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  /* background-color: #151515; */
+  filter: blur(7px);
+  transition: top, visibility, opacity, 0.3s ease-in-out;
+}
 .btn-free {
+  transition: transform 0.4s ease;
   background-color: var(--second-color);
+  position: relative;
 }
 .btn-cost {
+  transition: transform 0.4s ease;
+
   background-color: var(--primary-color);
   font-weight: 700;
+  position: relative;
 }
 .btn-mail {
   background-color: var(--primary-color);
   width: 95px;
   height: 40px;
+  transition: background-color 0.4s ease-out;
+}
+.btn-mail:hover {
+  background-color: #fff;
+  color: var(--primary-color);
 }
 
 .course-pagination {
@@ -348,6 +456,9 @@ h1.heading {
 .footer-menu a {
   text-decoration: none;
   line-height: 30px;
+}
+.footer-menu a:hover {
+  color: var(--primary-color);
 }
 
 .footer-sub {
@@ -435,6 +546,7 @@ h1.heading {
   height: 75px;
   object-fit: cover;
 }
+
 .popular-item .content {
   display: flex;
   padding: 10px 20px;
