@@ -142,6 +142,9 @@ a {
   color: #fff;
   gap: 16px;
 }
+.breadcrumb a {
+  transition: color 0.6s ease;
+}
 
 .breadcrumb a:hover {
   color: var(--second-color);
@@ -359,6 +362,11 @@ h1.heading {
   filter: blur(7px);
   transition: top, visibility, opacity, 0.3s ease-in-out;
 }
+.btn-product::before {
+  width: 80%;
+  left: 14px;
+}
+
 .btn-free {
   transition: transform 0.4s ease;
   background-color: var(--second-color);
@@ -456,6 +464,7 @@ h1.heading {
 .footer-menu a {
   text-decoration: none;
   line-height: 30px;
+  transition: color 0.5s ease;
 }
 .footer-menu a:hover {
   color: var(--primary-color);
@@ -531,7 +540,12 @@ h1.heading {
   margin-top: 24px;
   display: block;
   color: #242222b3;
+  transition: color 0.5s ease;
 }
+.categories-item:hover {
+  color: var(--primary-color);
+}
+
 .popular-list {
   margin-top: 30px;
 }
@@ -556,10 +570,16 @@ h1.heading {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  transition: color 0.5s ease;
 }
 .popular-item .content .cost {
   margin-top: 20px;
 }
+
+.popular-item:hover .name {
+  color: var(--primary-color);
+}
+
 .popular-list li + li {
   margin-top: 30px;
 }
@@ -570,9 +590,42 @@ h1.heading {
 .filter-box {
   display: flex;
   align-items: center;
+  position: relative;
   justify-content: space-between;
   color: #6f6f6f;
   font-size: 1.8rem;
+}
+.filter-box:hover .list-filter {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(1);
+}
+.list-filter {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 200px;
+  z-index: 1;
+  background-color: #fff;
+  transform: translateY(0);
+  opacity: 0;
+  /* padding: 0 20px; */
+  visibility: hidden;
+  box-shadow: 2px 2px 10px 0px #686868;
+  transition: transform, visivility, opacity, 0.5s ease;
+}
+.list-filter .filter-item {
+  display: block;
+  text-decoration: none;
+  font-size: 1.4rem;
+  padding: 0 20px;
+  line-height: 40px;
+  text-transform: capitalize;
+  transition: background-color, color, 0.4s ease;
+}
+.list-filter .filter-item:hover {
+  background-color: var(--primary-color);
+  color: #fff;
 }
 
 .filter-box .filter {
@@ -598,17 +651,20 @@ h1.heading {
   width: calc(100% / var(--colum) - var(--space));
   border: 1px solid #ccc;
   margin-left: var(--space);
+  /* overflow: hidden; */
 }
 
 .product-item .img-thumb {
   aspect-ratio: 1/0.9;
   display: block;
+  overflow: hidden;
 }
 
 .product-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.6s ease;
 }
 .product-item .info {
   display: flex;
@@ -627,6 +683,10 @@ h1.heading {
 .product-item .info .cost {
   margin-top: 16px;
 }
+.product-item:hover img {
+  transform: scale(1.2);
+}
+
 .btn-product {
   width: 130px;
   height: 40px;
