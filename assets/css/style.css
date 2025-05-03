@@ -306,8 +306,13 @@ h1.heading {
   line-height: 22px;
 }
 .course-item .title {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   font-weight: 700;
+  line-height: 24px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .course-item .bottom {
   display: flex;
@@ -362,6 +367,7 @@ h1.heading {
   filter: blur(7px);
   transition: top, visibility, opacity, 0.3s ease-in-out;
 }
+
 .btn-product::before {
   width: 80%;
   left: 14px;
@@ -737,3 +743,34 @@ h1.heading {
   text-align: center;
   text-decoration: none;
 }
+
+/* --------------------outline-------------- */
+.outline-container {
+  /* text-align: center; */
+}
+.outline-container .list-menu {
+  border: 1px solid red;
+}
+.list-menu li + li,
+a + h2 {
+  border-top: 1px solid red;
+  /* margin-left: 10px; */
+}
+.list-menu a {
+  display: block;
+  line-height: 40px;
+  /* background-color: #ccc; */
+  padding: 0 20px;
+}
+.test {
+  height: 2000px;
+}
+/* h2 {
+  margin-top: 200px;
+  display: block;
+  position: sticky;
+  top: 0;
+  background-color: yellow;
+  padding: 50px;
+  font-size: 20px;
+}  */
