@@ -281,6 +281,27 @@ h1.heading {
   aspect-ratio: 1/0.8;
   display: block;
   overflow: hidden;
+  position: relative;
+}
+
+.course-item .course-sale::after {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  /* text-align: center; */
+  content: "\e0b7";
+  font-family: "FontAwesome";
+  color: #fff;
+  background-color: var(--primary-color);
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: -64px;
+  right: -54px;
+  font-size: 1.6rem;
+  font-weight: 300;
+  transform: rotate(35deg);
+  line-height: 167px;
 }
 
 .course-item .thumb {
@@ -289,13 +310,6 @@ h1.heading {
   object-fit: cover;
   transition: transform 0.4s ease-in;
 }
-/* .course-item .thumb::before {
-  content: "";
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  background-color: red;
-} */
 
 .course-item:hover .thumb {
   transform: scale(1.2);
